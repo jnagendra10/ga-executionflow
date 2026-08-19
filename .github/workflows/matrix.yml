@@ -8,7 +8,7 @@ jobs:
    # continue-on-error: true
     runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: true  # Run all matrix combinations
+      fail-fast: false  # Run all matrix combinations
       matrix:
         os: [ubuntu-latest, windows-latest]
         node-version: [12, 16, 18]
