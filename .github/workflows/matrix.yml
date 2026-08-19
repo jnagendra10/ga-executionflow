@@ -5,8 +5,9 @@ name: Matrix Workflow
 #       - master
       # Or use workflow_dispatch for manual triggers
 on:
-  workflow_dispatch:jobs:
-  build:
+  workflow_dispatch:
+  jobs:
+    build:
    # continue-on-error: true
     runs-on: ${{ matrix.os }}
     strategy:
