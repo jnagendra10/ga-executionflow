@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+      # Or use workflow_dispatch for manual triggers
+  workflow_dispatch:
 jobs:
   build:
    # continue-on-error: true
