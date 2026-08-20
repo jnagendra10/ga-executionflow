@@ -69,12 +69,12 @@ jobs:
   deploy:
     needs: build
     uses: ./.github/workflows/reusable.yml
-  print-deploy-results:
+  print-deploy-result:
     needs: deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Output deploy results
-        run: echo "{{ needs.deploy.outputs.result }}"
+      - name: print deploy output
+        run: echo "${{ needs.deploy.result }}"
   report:
     needs: [lint, deploy]
     if: failure()
