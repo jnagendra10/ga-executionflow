@@ -8,9 +8,9 @@
             default: 'dist-files'
             type: string
         outputs:
-          artifact-name:
-            description: 'Name of the artifact to download'
-            value: ${{ inputs.artifact-name }}
+          result:
+            description: 'the result of the deployment'
+            value: ${{ jobs.deploy.outputs.outcome}}
         # secrets:
         #   deploy-token:
         #     description: 'Token for deployment'
@@ -18,7 +18,7 @@
     jobs:
       deploy:
         outputs:
-          outcome: ${{ steps.deploy.outcome }}
+          outcome: ${{ steps.set-result.outputs.step-result }}
         runs-on: ubuntu-latest
         steps:
           - name: Get build artifacts
@@ -31,5 +31,5 @@
             id: deploy
             run: echo "Deploying..."
           - name: Output deployment information
-            run: echo "set-output name=artifact-name::${{ inputs.artifact-name }}"
-    
+            id: set-result
+            run: echo "::set-output name=step-result::success"
