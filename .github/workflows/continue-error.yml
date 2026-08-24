@@ -2,7 +2,7 @@ name: Website Deployment On Continue Error
 on:
   push:
     branches:
-      - develop
+      - master
 jobs:
   lint:
     runs-on: ubuntu-latest
