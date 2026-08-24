@@ -2,7 +2,7 @@ name: Using Reusable Workflows
 on:
   push:
     branches:
-      - develop
+      - master
 jobs:
   lint:
     runs-on: ubuntu-latest
