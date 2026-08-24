@@ -1,8 +1,8 @@
-name: Website Deployment On Continue Error
+name: Website Deployment On Continue Error1
 on:
   push:
     branches:
-      - develop
+      - master
 jobs:
   lint:
     runs-on: ubuntu-latest
